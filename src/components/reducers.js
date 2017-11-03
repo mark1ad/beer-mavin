@@ -13,6 +13,13 @@ export const beers = (state={}, action) => {
           }
         ]
       }
+    case C.ADD_BEERS:
+      return {
+        beers: [
+          ...state.beers,
+          ...action.beers
+        ]
+      }
     default:
       return state;
   }

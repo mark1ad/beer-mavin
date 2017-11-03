@@ -4,12 +4,14 @@ import {
 } from 'redux';
 import { beers } from './reducers';
 
-const initStore = {
+let initStore = {
   beers: [
     {name: "Bud Lite", brewery: "Budweiser"},
     {name: "Fat Tire", brewery: "New Belgium"}
   ]
 };
+
+initStore = { beers: []}
 
 const logger = store => next => action => {
   // console.groupCollapsed("dispatching ", action.type)

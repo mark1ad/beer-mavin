@@ -6,3 +6,9 @@ export const addBeer = (name, brewery) =>
     name: name,
     brewery: brewery
   })
+
+export const addBeers = (beers) =>
+({
+  type: C.ADD_BEERS,
+  beers: beers
+})

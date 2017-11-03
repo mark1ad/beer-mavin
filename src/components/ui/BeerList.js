@@ -7,7 +7,7 @@ const BeerList = ({beers}) =>
     {(beers.length === 0) ?
       <p>No Beers Found</p> :
       beers.map(beer =>
-        <BeerInfo name={beer.name} brewery={beer.brewery}/>
+        <BeerInfo name={beer.name} brewery={beer.brewery} key={beer.id}/>
       )
     }
   </div>
