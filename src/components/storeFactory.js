@@ -4,6 +4,13 @@ import {
 } from 'redux';
 import { beers } from './reducers';
 
+const initStore = {
+  beers: [
+    {name: "Bud Lite", brewery: "Budweiser"},
+    {name: "Fat Tire", brewery: "New Belgium"}
+  ]
+};
+
 const logger = store => next => action => {
   // console.groupCollapsed("dispatching ", action.type)
   console.log('prev state ', store.getState());
@@ -13,9 +20,9 @@ const logger = store => next => action => {
   // console.groupEnd();
 }
 
-// const storeFactory = (initialState = {}) =>
-  // applyMiddleware(logger)(createStore)(beers, initialState)
-const storeFactory = (initialState = {}) =>
-  (createStore)(beers, initialState)
+const storeFactory = (initialState = initStore) =>
+  applyMiddleware(logger)(createStore)(beers, initialState)
+// const storeFactory = (initialState = initStore) =>
+//   (createStore)(beers, initialState)
 
 export default storeFactory;

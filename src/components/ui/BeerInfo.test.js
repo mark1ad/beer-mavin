@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 
-import BeerDisplay from './BeerDisplay';
+import BeerInfo from './BeerInfo';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<BeerDisplay />, div);
+  ReactDOM.render(<BeerInfo />, div);
 })
 
 // Snapshot test
 it("snapshot test", () => {
   let output = shallow(
-    <BeerDisplay />
+    <BeerInfo name="zippy" brewery="pinhead" />
   ).html()
-  expect(output).toMatchSnapshot()
+  expect(output).toEqual("<div><p>zippy, pinhead</p></div>")
 })
