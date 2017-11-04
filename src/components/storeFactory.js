@@ -1,5 +1,6 @@
 import {
   createStore,
+  combineReducers,
   applyMiddleware
 } from 'redux';
 import { beers } from './reducers';
@@ -18,7 +19,7 @@ const logger = store => next => action => {
 }
 
 const storeFactory = (initialState = initStore) =>
-  applyMiddleware(logger)(createStore)(beers, initialState)
+  applyMiddleware(logger)(createStore)(combineReducers({beers}), initialState)
 // const storeFactory = (initialState = initStore) =>
 //   (createStore)(beers, initialState)
 

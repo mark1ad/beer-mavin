@@ -4,13 +4,13 @@
 
 import { connect } from 'react-redux';
 
-import { addBeers, clearBeers } from './actions';
+import { addBeer, clearBeers } from './actions';
 import BeerList from './ui/BeerList';
 
-const mapStateToProps = (state) =>
-  ({
-    beers: state.beers
-  })
+const mapStateToProps = (state) => {
+  const beers = state.beers === undefined ? [] : state.beers;
+  return { beers: beers }
+}
 
 const mapDispatchToProps = dispatch => {
   // Clear beer list in store then get beers from server
@@ -18,7 +18,9 @@ const mapDispatchToProps = dispatch => {
     dispatch(clearBeers());
     global.axiosInstance.get("beers")
       .then( res => {
-        dispatch(addBeers(res.data))
+        res.data.map(
+          b => dispatch(addBeer(b.id, b.name, b.brewery))
+        )
       })
       .catch( error => {
         console.log("ERROR ", error);
