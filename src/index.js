@@ -8,20 +8,16 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 import storeFactory from './components/storeFactory';
-import { addBeers } from './components/actions';
 
-const loadData = (store) => {
-  const address = "http://localhost:3000/beers";
-  axios.get(address)
-    .then( res => {
-      store.dispatch(addBeers(res.data))
-    })
-}
+// TODO: set url
+const axiosInstance = axios.create({
+  baseURL: "http://localhost:3000"
+})
 
+global.axiosInstance = axiosInstance;
 
 const store = storeFactory();
 // TODO: move loading store to more appriopriate place
-loadData(store)
 ReactDOM.render(
   <Provider store={store}>
     <App />

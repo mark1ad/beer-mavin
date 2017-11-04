@@ -5,13 +5,8 @@ import {
 import { beers } from './reducers';
 
 let initStore = {
-  beers: [
-    {name: "Bud Lite", brewery: "Budweiser"},
-    {name: "Fat Tire", brewery: "New Belgium"}
-  ]
+  beers: []
 };
-
-initStore = { beers: []}
 
 const logger = store => next => action => {
   // console.groupCollapsed("dispatching ", action.type)
