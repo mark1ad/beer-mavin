@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => {
     global.axiosInstance.get("beers")
       .then( res => {
         res.data.map(
-          b => dispatch(addBeer(b.id, b.name, b.brewery))
+          b => dispatch(addBeer(b))
         )
       })
       .catch( error => {

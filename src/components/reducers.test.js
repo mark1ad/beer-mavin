@@ -31,7 +31,7 @@ it("beer default success", () => {
 
 it( "beer add beer", () => {
   const state = {};
-  const action = addBeer( newBeer.id, newBeer.name, newBeer.brewery);
+  const action = addBeer( newBeer);
   deepFreeze(state);
   deepFreeze(action);
   const results = beer(state, action);
@@ -53,7 +53,7 @@ it("default success", () => {
 
 it("add first beer", () => {
   const state = [];
-  const action = addBeer(newBeer.id, newBeer.name, newBeer.brewery);
+  const action = addBeer( newBeer);
   const expected_result = [ newBeer ];
   deepFreeze(state);
   deepFreeze(action);
@@ -63,7 +63,7 @@ it("add first beer", () => {
 
 it("add beer to store with beers", () => {
   const state = beerList;
-  const action = addBeer(newBeer.id, newBeer.name, newBeer.brewery);
+  const action = addBeer( newBeer);
   deepFreeze(state);
   deepFreeze(action);
   const expected_result = [

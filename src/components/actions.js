@@ -7,7 +7,7 @@ export const clearBeers = () =>
 })
 
 // Add a single beer to store
-export const addBeer = (id, name, brewery) =>
+export const addBeer = ({id, name, brewery}) =>
   ({
     type: C.ADD_BEER,
     id: id,
