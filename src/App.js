@@ -4,6 +4,7 @@ import { HashRouter, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Beers from './components/Beers';
+import FindBeer from './components/FindBeer';
 
 // TODO: Use other router type insteaad of HashRouter?
 class App extends Component {
@@ -12,7 +13,8 @@ class App extends Component {
       <HashRouter>
         <div className="App">
           <Header />
-          <Route exact path="/" component={Beers} />
+          <FindBeer />
+          <Route path="/search" component={Beers} />
         </div>
       </HashRouter>
     );
