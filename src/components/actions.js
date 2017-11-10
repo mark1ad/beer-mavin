@@ -14,3 +14,10 @@ export const addBeer = ({id, name, brewery}) =>
     name: name,
     brewery: brewery
   })
+
+// Replace beer list with new list of beers
+export const setBeers = (beers) =>
+({
+  type: C.SET_BEER_LIST,
+  beers: beers
+})

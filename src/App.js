@@ -3,7 +3,7 @@ import { HashRouter, Route } from 'react-router-dom';
 
 import './App.css';
 import Header from './components/Header';
-import Beers from './components/Beers';
+import SearchResults from './components/SearchResults';
 import FindBeer from './components/FindBeer';
 
 // TODO: Use other router type insteaad of HashRouter?
@@ -14,7 +14,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <FindBeer />
-          <Route path="/search" component={Beers} />
+          <Route path="/search" component={SearchResults} />
         </div>
       </HashRouter>
     );

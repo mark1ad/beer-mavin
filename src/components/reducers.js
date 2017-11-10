@@ -25,6 +25,13 @@ export const beers = (state=[], action) => {
     case C.CLEAR_BEERS:
       // remove all beers from state
       return []
+    case C.SET_BEER_LIST:
+      const beerList = action.beers.map(beer => ({
+        id: beer.id,
+        name: beer.name,
+        brewery: beer.breweries[0].name
+      }))
+      return beerList;
     default:
       // do nothing
       return state;

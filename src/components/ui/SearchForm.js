@@ -8,7 +8,13 @@ const SearchForm = (props) => {
   const submit = e => {
     e.preventDefault();
     props.onSubmit(_beerName.value);
-    props.history.push(`/search/${_beerName.value}`);
+
+    // redirect to search results page
+    const path = `/search/${_beerName.value}`;
+    if (path !== props.history.location.pathname) {
+      props.history.push(`/search/${_beerName.value}`);
+    }
+
     _beerName.focus();
   }
 

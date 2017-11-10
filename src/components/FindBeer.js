@@ -1,10 +1,19 @@
 import { connect } from 'react-redux';
 
 import SearchForm from './ui/SearchForm';
+import { setBeers } from './actions';
 
 const mapDispatchToProps = dispatch => {
   let onSubmit = (beerName) => {
-    console.log("FindBeer onSubmit ", beerName);
+    global.axiosInstance.get("beers/search?name=" + beerName)
+      .then(res => {
+        const beers = res.data.data;
+        dispatch(setBeers(beers))
+      })
+      .catch(({response}) => {
+        // TODO: Handle failure
+        console.log("onSubmit fail");
+      })
   }
   return {
     onSubmit: onSubmit
