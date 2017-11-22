@@ -1,4 +1,5 @@
 import C from './constants';
+import Beer from './helpers/beer';
 
 export const beer = (state = {}, action) => {
   switch (action.type) {
@@ -26,11 +27,9 @@ export const beers = (state=[], action) => {
       // remove all beers from state
       return []
     case C.SET_BEER_LIST:
-      const beerList = action.beers.map(beer => ({
-        id: beer.id,
-        name: beer.name,
-        brewery: beer.breweries[0].name
-      }))
+      const beerList = action.beers.map(beer =>
+        new Beer(beer)
+      )
       return beerList;
     default:
       // do nothing

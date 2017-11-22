@@ -17,7 +17,10 @@ class BeerList extends Component {
         {(this.props.beers.length === 0) ?
           <p>No Beers Found</p> :
           this.props.beers.map(beer =>
-            <BeerInfo name={beer.name} brewery={beer.brewery} key={beer.id}/>
+            <BeerInfo name={beer.name}
+              brewery={beer.brewery}
+              style={beer.style}
+              key={beer.id}/>
           )
         }
       </div>
@@ -27,7 +30,7 @@ class BeerList extends Component {
 
 BeerList.propTypes = {
   beers: PropTypes.array.isRequired,
-  
+
 }
 
 export default BeerList;
