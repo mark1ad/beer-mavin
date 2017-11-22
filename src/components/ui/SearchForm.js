@@ -10,21 +10,31 @@ const SearchForm = (props) => {
     props.onSubmit(_beerName.value);
 
     // redirect to search results page
-    const path = `/search/${_beerName.value}`;
+    const path = `/search`;
     if (path !== props.history.location.pathname) {
-      props.history.push(`/search/${_beerName.value}`);
+      props.history.push(`/search`);
     }
 
     _beerName.focus();
   }
 
   return (
-    <div>
+    <div id="search-form">
       <form onSubmit={submit}>
-        <input type="text"
-            ref={input => _beerName = input}
-            placeholder="Beer Name" />
-        <button type="submit">Find Beer</button>
+        <div className="row">
+
+          <div className="col-xs-8 col-sm-4">
+            <input type="text"
+                className="search-field form-control"
+                ref={input => _beerName = input}
+                placeholder="Beer" />
+          </div>
+
+          <div className="col-xs-3 col-sm-2">
+            <button className="btn btn-default" type="submit">Find Beer</button>
+          </div>
+        </div>
+
       </form>
     </div>
   )

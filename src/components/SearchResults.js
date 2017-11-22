@@ -11,17 +11,9 @@ const mapStateToProps = (state) => {
   return { beers: beers }
 }
 
-const mapDispatchToProps = dispatch => {
-  const onMount = () => {}
-
-  return {
-    onMount
-  }
-}
-
 const SearchResults = connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 ) (BeerList)
 
 export default SearchResults;
