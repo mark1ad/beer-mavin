@@ -13,9 +13,9 @@ import BeerInfo from './BeerInfo';
 class BeerList extends Component {
   render() {
     return (
-      <div>
+      <div className="beer-list">
         {(this.props.beers.length === 0) ?
-          <p>No Beers Found</p> :
+          <p>No beers found with that name</p> :
           this.props.beers.map(beer =>
             <BeerInfo name={beer.name}
               breweries={beer.breweries}
