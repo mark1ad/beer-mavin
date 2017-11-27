@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import BeerList from './BeerList';
 
 const beers = [
-  {id: "1", name: "Bud", brewery: "Budweiser"}
+  {id: "1", name: "Bud", breweries: [{id: 1, name: "Budweiser"}]}
 ]
 
 const onMount = () => {}
