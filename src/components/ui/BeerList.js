@@ -18,7 +18,7 @@ class BeerList extends Component {
           <p>No Beers Found</p> :
           this.props.beers.map(beer =>
             <BeerInfo name={beer.name}
-              brewery={beer.brewery}
+              breweries={beer.breweries}
               style={beer.style}
               key={beer.id}/>
           )
