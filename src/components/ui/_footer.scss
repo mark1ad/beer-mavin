@@ -5,7 +5,11 @@
   // Set the fixed height of the footer here
   // Needs to match body margin-bottom
   height: 60px;
-    background-color: #f5f5f5;
   color: white;
   background-color: #333;
+}
+
+.footer .container {
+  // height: auto;
+  margin: 20px 0;
 }
