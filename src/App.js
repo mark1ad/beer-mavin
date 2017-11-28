@@ -3,6 +3,7 @@ import { HashRouter, Route } from 'react-router-dom';
 
 import './App.css';
 import Header from './components/Header';
+import Footer from './components/ui/Footer';
 import SearchResults from './components/SearchResults';
 import FindBeer from './components/FindBeer';
 
@@ -15,6 +16,7 @@ class App extends Component {
           <Header />
           <FindBeer />
           <Route path="/search" component={SearchResults} />
+          <Footer />
         </div>
       </HashRouter>
     );
