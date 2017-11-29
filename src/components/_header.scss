@@ -6,6 +6,11 @@
   margin-bottom: 0;
 }
 
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
 @media screen and ( max-device-width: 480px ) {
   .jumbotron {
     padding-top: 15px;
