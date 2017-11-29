@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Footer from './components/ui/Footer';
 import SearchResults from './components/SearchResults';
 import FindBeer from './components/FindBeer';
+import About from './components/ui/About';
 
 // TODO: Use other router type insteaad of HashRouter?
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
           <Header />
           <FindBeer />
           <Route path="/search" component={SearchResults} />
+          <Route path="/about" component={About} />
           <Footer />
         </div>
       </HashRouter>
