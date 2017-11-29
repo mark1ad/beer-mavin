@@ -5,8 +5,12 @@ class Beer {
   constructor(beer) {
     this.id = beer.id;
     this.name = beer.name;
-    this.style = beer.style.name;
-    this.breweries = beer.breweries.map(brewery => new Brewery(brewery));
+    if (beer.style) {
+      this.style = beer.style.name;
+    }
+    if (beer.breweries) {
+      this.breweries = beer.breweries.map(brewery => new Brewery(brewery));
+    }
   }
 }
 

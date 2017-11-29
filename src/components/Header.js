@@ -3,8 +3,8 @@ import React from 'react';
 
 const Header = (props) => {
   return (
-    <div className="jumbotron jumbotron-fluid">
-      <h1>Beer rater</h1>
+    <div className="header jumbotron jumbotron-fluid">
+      <h1><a href="/">Beer Rater</a></h1>
     </div>
   )
 }

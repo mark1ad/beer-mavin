@@ -26,3 +26,13 @@ it("valid breweries", () => {
   const newBeer = new Beer(beerData[0]);
   expect(newBeer.breweries.length).toEqual(1);
 })
+
+it("beer doesn't have style", () => {
+  const newBeer = new Beer({breweries: []});
+  expect(newBeer).toBeDefined();
+})
+
+it("beer doesn't have breweries", () => {
+  const newBeer = new Beer({style:{}});
+  expect(newBeer).toBeDefined();
+})
