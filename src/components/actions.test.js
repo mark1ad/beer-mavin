@@ -18,8 +18,9 @@ it('action  addBeer', () => {
 })
 
 it('action setSelectedBeer', () => {
-  const action = setSelectedBeer(beerData[0]);
-  expect(action).toBeDefined();
-  expect(action.type).toEqual(C.SET_SELECTED_BEER);
-  expect(action.beer.name).toEqual("Fat Tire");
+  const action = setSelectedBeer("beer_id");
+  expect(action).toEqual({
+    type: C.SET_SELECTED_BEER,
+    beer_id: "beer_id"
+  })
 })

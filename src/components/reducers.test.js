@@ -88,9 +88,9 @@ it("clear beers", () => {
 // SelectedBeer
 it("set selected beer", () => {
   const state = {};
-  const action = setSelectedBeer( beerData[0]);
+  const action = setSelectedBeer( "test_beer_id");
   deepFreeze(state);
   deepFreeze(action);
   const results = selectedBeer( state, action);
-  expect(results).toEqual(beerData[0]);
+  expect(results).toEqual("test_beer_id");
 })

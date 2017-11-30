@@ -23,8 +23,8 @@ export const setBeers = (beers) =>
 })
 
 // Set beer to display on beer details page
-export const setSelectedBeer = (beer) =>
+export const setSelectedBeer = (beer_id) =>
 ({
   type: C.SET_SELECTED_BEER,
-  beer: beer
+  beer_id: beer_id
 })

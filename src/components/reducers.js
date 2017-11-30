@@ -37,10 +37,10 @@ export const beers = (state=[], action) => {
   }
 }
 
-export const selectedBeer = (state={}, action) => {
+export const selectedBeer = (state="", action) => {
   switch (action.type) {
     case C.SET_SELECTED_BEER:
-      return action.beer;
+      return action.beer_id;
     default:
       return state;
   }

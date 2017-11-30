@@ -2,11 +2,11 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-const BeerInfo = ({name, style, breweries, history}) => {
+const BeerInfo = ({beer_id, name, style, breweries, history, showDetails}) => {
 
   const submit = e => {
     e.preventDefault();
-    console.log("submitted");
+    showDetails(beer_id);
     history.push('/beer');
   }
 
