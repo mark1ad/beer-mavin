@@ -8,6 +8,10 @@ class Beer {
     if (beer.style) {
       this.style = beer.style.name;
     }
+
+    this.abv = beer.abv;
+    this.ibu = beer.ibu;
+    this.description = beer.description;
     if (beer.breweries) {
       this.breweries = beer.breweries.map(brewery => new Brewery(brewery));
     }
