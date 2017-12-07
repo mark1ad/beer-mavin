@@ -27,6 +27,21 @@ it("valid breweries", () => {
   expect(newBeer.breweries.length).toEqual(1);
 })
 
+it("valid abv", () => {
+  const newBeer = new Beer(beerData[0]);
+  expect(newBeer.abv).toEqual("5.2");
+})
+
+it("valid ibu", () => {
+  const newBeer = new Beer(beerData[0]);
+  expect(newBeer.ibu).toEqual("18.5");
+})
+
+it("valid description", () => {
+  const newBeer = new Beer(beerData[0]);
+  expect(newBeer.description).toEqual(beerData[0].description);
+})
+
 it("beer doesn't have style", () => {
   const newBeer = new Beer({breweries: []});
   expect(newBeer).toBeDefined();

@@ -1,0 +1,13 @@
+.beer-info-details {
+  margin: 30px;
+}
+
+.beer-info-description {
+  margin: 35px 0;
+}
+
+@media screen and ( max-device-width: $screen-sm-min ) {
+  .beer-info-description {
+    margin: 15px 0;
+  }
+}

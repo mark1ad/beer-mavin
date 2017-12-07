@@ -6,8 +6,13 @@
   list-style-type: none;
 }
 
+.beer-info a {
+  text-decoration: none;
+}
+
 .beer-info-name {
   font-weight: bold;
+  color: black;
 }
 
 .beer-info-brewery {
