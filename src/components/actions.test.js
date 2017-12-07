@@ -1,4 +1,5 @@
-import { clearBeers, addBeer, setSelectedBeer } from './actions';
+import { clearBeers, addBeer, setSelectedBeer, setSelectedBrewery }
+  from './actions';
 import C from './constants';
 import beerData from '../test_data/test_data.json';
 
@@ -24,3 +25,11 @@ it('action setSelectedBeer', () => {
     beer_id: "beer_id"
   })
 })
+
+it('action setSelectedBrewery', () => {
+  const action = setSelectedBrewery("brewery_id");
+  expect(action).toEqual({
+    type: C.SET_SELECTED_BREWERY,
+    brewery_id: "brewery_id"
+  })
+});

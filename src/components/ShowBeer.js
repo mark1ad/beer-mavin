@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import BeerInfo from './ui/BeerInfo';
-import { setSelectedBeer } from './actions';
+import { setSelectedBeer, setSelectedBrewery } from './actions';
 
 const mapStateToProps = (state, props) => {
   const foundBeer = state.beers.find((beer) => {
@@ -16,11 +16,17 @@ const mapStateToProps = (state, props) => {
 }
 
 const mapDispatchToProps = dispatch => {
-  let showDetails = (beer_id) => {
+  let showBeerDetails = (beer_id) => {
     dispatch(setSelectedBeer(beer_id));
   }
+
+  let showBreweryDetails = (brewery_id) => {
+    dispatch(setSelectedBrewery(brewery_id));
+  }
+
   return {
-    showDetails: showDetails
+    showBeerDetails: showBeerDetails,
+    showBreweryDetails: showBreweryDetails
   }
 }
 

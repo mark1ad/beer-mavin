@@ -3,7 +3,7 @@ import {
   combineReducers,
   applyMiddleware
 } from 'redux';
-import { beers, selectedBeer } from './reducers';
+import { beers, selectedBeer, selectedBrewery } from './reducers';
 
 let initStore = {
   beers: []
@@ -21,7 +21,7 @@ const logger = store => next => action => {
 }
 
 const storeFactory = (initialState = initStore) =>
-  applyMiddleware(logger)(createStore)(combineReducers({beers, selectedBeer}), initialState)
+  applyMiddleware(logger)(createStore)(combineReducers({beers, selectedBeer, selectedBrewery}), initialState)
 // const storeFactory = (initialState = initStore) =>
 //   (createStore)(beers, initialState)
 

@@ -45,3 +45,12 @@ export const selectedBeer = (state="", action) => {
       return state;
   }
 }
+
+export const selectedBrewery = (state="", action) => {
+  switch (action.type) {
+    case C.SET_SELECTED_BREWERY:
+      return action.brewery_id;
+    default:
+      return state;
+  }
+}
