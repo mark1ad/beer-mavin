@@ -9,13 +9,14 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
 import ShowBeer from '../ShowBeer';
+import NoBeerError from './NoBeerError';
 
 class BeerList extends Component {
   render() {
     return (
       <div className="beer-list">
         {(this.props.beers.length === 0) ?
-          <p>No beers found with that name</p> :
+          <NoBeerError /> :
           this.props.beers.map(beer =>
             <ShowBeer key={beer.id} beer_id={beer.id} />
           )
