@@ -3,6 +3,8 @@ class Brewery {
   constructor(brewery) {
     this.id = brewery.id;
     this.name = brewery.name;
+    this.website = brewery.website;
+    this.description = brewery.description;
   }
 }
 

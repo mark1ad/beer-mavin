@@ -8,6 +8,12 @@ const BeerInfoDetails = (props) => {
     props.history.goBack();
   }
 
+  const selectBrewery = (e, brewery) => {
+    e.preventDefault();
+    props.showBreweryDetails(brewery);
+    props.history.push('/brewery');
+  }
+
   return (
     <div className="beer-info-details">
       {(props.name === undefined) ?
@@ -27,7 +33,10 @@ const BeerInfoDetails = (props) => {
 
               <div>
                   {props.breweries.map(brewery =>
-                    <div key={brewery.id}>{brewery.name}</div>
+                    <div onClick={(e) => selectBrewery(e, brewery)}
+                        key={brewery.id}>
+                      {brewery.name}
+                    </div>
                   )}
               </div>
 

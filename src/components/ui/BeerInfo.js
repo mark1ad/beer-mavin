@@ -2,12 +2,18 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-const BeerInfo = ({beer_id, name, style, breweries, history, showDetails}) => {
+const BeerInfo = ({beer_id, name, style, breweries, history, showBeerDetails, showBreweryDetails}) => {
 
   const submit = e => {
     e.preventDefault();
-    showDetails(beer_id);
+    showBeerDetails(beer_id);
     history.push('/beer');
+  }
+
+  const selectBrewery = (e, brewery) => {
+    e.preventDefault();
+    showBreweryDetails(brewery);
+    history.push('/brewery');
   }
 
   return (
@@ -18,7 +24,9 @@ const BeerInfo = ({beer_id, name, style, breweries, history, showDetails}) => {
       <div>
         <ul>
           {breweries.map(brewery =>
-            <li className="beer-info-brewery" key={brewery.id}>{brewery.name}</li>
+            <li className="beer-info-brewery" key={brewery.id}>
+              <span onClick={(e) => selectBrewery(e, brewery)}>{brewery.name}</span>
+            </li>
           )}
         </ul>
       </div>
