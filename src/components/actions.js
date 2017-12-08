@@ -30,8 +30,8 @@ export const setSelectedBeer = (beer_id) =>
 })
 
 // Set brewery to display on brewery details page
-export const setSelectedBrewery = (brewery_id) =>
+export const setSelectedBrewery = (brewery) =>
 ({
   type: C.SET_SELECTED_BREWERY,
-  brewery_id: brewery_id
+  brewery: brewery
 });

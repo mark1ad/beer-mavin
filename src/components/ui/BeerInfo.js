@@ -10,9 +10,9 @@ const BeerInfo = ({beer_id, name, style, breweries, history, showBeerDetails, sh
     history.push('/beer');
   }
 
-  const selectBrewery = (e, id) => {
+  const selectBrewery = (e, brewery) => {
     e.preventDefault();
-    showBreweryDetails(id);
+    showBreweryDetails(brewery);
     history.push('/brewery');
   }
 
@@ -25,7 +25,7 @@ const BeerInfo = ({beer_id, name, style, breweries, history, showBeerDetails, sh
         <ul>
           {breweries.map(brewery =>
             <li className="beer-info-brewery" key={brewery.id}>
-              <span onClick={(e) => selectBrewery(e, brewery.id)}>{brewery.name}</span>
+              <span onClick={(e) => selectBrewery(e, brewery)}>{brewery.name}</span>
             </li>
           )}
         </ul>
