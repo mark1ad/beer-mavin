@@ -1,12 +1,9 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 import NoBeerError from './NoBeerError';
+import GoBackBtn from './GoBackBtn';
 
 const BeerInfoDetails = (props) => {
-  const goBack = e => {
-    props.history.goBack();
-  }
 
   const selectBrewery = (e, brewery) => {
     e.preventDefault();
@@ -47,13 +44,11 @@ const BeerInfoDetails = (props) => {
             </div>
           </div>
 
-          <div className="text-center">
-            <button className="btn btn-default" onClick={goBack}>Go Back</button>
-          </div>
+          <GoBackBtn />
         </div>
       }
     </div>
   )
 }
 
-export default withRouter(BeerInfoDetails);
+export default BeerInfoDetails;

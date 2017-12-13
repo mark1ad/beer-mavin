@@ -1,12 +1,9 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 import NoBeerError from './NoBeerError';
+import GoBackBtn from './GoBackBtn';
 
 const BreweryInfoDetails = (props) => {
-  const goBack = e => {
-    props.history.goBack();
-  }
   return (
     <div className="brewery-info-details">
       {(props.name === undefined) ?
@@ -19,15 +16,11 @@ const BreweryInfoDetails = (props) => {
             {props.description}
           </div>
 
-          <div className="text-center">
-            <button className="btn btn-default" onClick={goBack}>
-              Go Back
-            </button>
-          </div>
+          <GoBackBtn />
         </div>
       }
     </div>
   )
 };
 
-export default withRouter(BreweryInfoDetails);
+export default BreweryInfoDetails;
