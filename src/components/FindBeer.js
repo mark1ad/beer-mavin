@@ -10,9 +10,9 @@ const mapDispatchToProps = dispatch => {
         const beers = res.data.data;
         dispatch(setBeers(beers))
       })
-      .catch(({response}) => {
+      .catch((response) => {
         // TODO: Handle failure
-        console.log("onSubmit fail");
+        console.log("onSubmit fail ", response);
       })
   }
   return {

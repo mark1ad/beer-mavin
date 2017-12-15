@@ -1,0 +1,54 @@
+import React from 'react';
+
+import NoBeerError from './NoBeerError';
+import GoBackBtn from './GoBackBtn';
+
+const BeerInfoDetails = (props) => {
+
+  const selectBrewery = (e, brewery) => {
+    e.preventDefault();
+    props.showBreweryDetails(brewery);
+    props.history.push('/brewery');
+  }
+
+  return (
+    <div className="beer-info-details">
+      {(props.name === undefined) ?
+        <NoBeerError /> :
+
+        <div>
+          <div className="row">
+            <div className="col-xs-12 col-sm-6">
+              <h2 className="text-center">{props.name}</h2>
+              <div>
+                {props.style}
+              </div>
+              <div>
+                {props.abv ? "ABV: " + props.abv : ""}
+                {props.ibu ? " IBU: " + props.ibu : ""}
+              </div>
+
+              <div>
+                  {props.breweries.map(brewery =>
+                    <div onClick={(e) => selectBrewery(e, brewery)}
+                        key={brewery.id}>
+                      {brewery.name}
+                    </div>
+                  )}
+              </div>
+
+            </div>
+
+            <div className="col-xs-12 col-sm-6 beer-info-description">
+              {props.description}
+            </div>
+          </div>
+
+          <GoBackBtn />
+        </div>
+      }
+    </div>
+  )
+}
+
+export default BeerInfoDetails;
