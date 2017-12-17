@@ -8,10 +8,7 @@ const mapStateToProps = (state, props) => {
     return props.beer_id === beer.id;
   })
   return {
-    beer_id: props.beer_id,
-    name: foundBeer.name,
-    style: foundBeer.style,
-    breweries: foundBeer.breweries
+    beer: foundBeer
   }
 }
 
