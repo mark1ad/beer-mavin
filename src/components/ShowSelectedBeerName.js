@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import NameField from './ui/NameField';
 
 const mapStateToProps = (state, props) => {
+  const name = state.selectedBeer ? state.selectedBeer.name : "";
   return {
-    name: state.selectedBeer.name
+    name: name
     // name: "Beer!"
   }
 };

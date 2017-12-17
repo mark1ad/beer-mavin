@@ -11,8 +11,6 @@ import About from './components/ui/About';
 import ShowBeerDetails from './components/ShowBeerDetails';
 import ShowBreweryDetails from './components/ShowBreweryDetails';
 
-import BeerInfoDetails_new from './components/ui/BeerInfoDetails_new';
-
 // TODO: Use other router type insteaad of HashRouter?
 class App extends Component {
   render() {
@@ -23,8 +21,7 @@ class App extends Component {
           <FindBeer />
           <Route exact path="/" component={Home} />
           <Route path="/search" component={SearchResults} />
-          <Route path="/beer" component={ShowBeerDetails} />
-          <Route path="/beer_new/:id" component={BeerInfoDetails_new} />
+          <Route path="/beer/:id" component={ShowBeerDetails} />
           <Route path="/brewery/:id" component={ShowBreweryDetails} />
           <Route path="/about" component={About} />
           <Footer />

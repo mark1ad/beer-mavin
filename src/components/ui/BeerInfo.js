@@ -9,7 +9,7 @@ const BeerInfo = ({beer, history, showBeerDetails, showBreweryDetails}) => {
   const submit = e => {
     e.preventDefault();
     showBeerDetails(beer);
-    history.push('/beer_new/' + beer.id);
+    history.push('/beer/' + beer.id);
   }
 
   return (
