@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+import NoBeerError from './NoBeerError';
 import GoBackBtn from './GoBackBtn';
 import ShowSelectedBeerName from '../ShowSelectedBeerName';
 import ShowAbvIbu from '../ShowAbvIbu';
 import ShowBeerDescription from '../ShowBeerDescription';
+import ShowBreweries from '../ShowBreweries';
 
 
 // TODO: This is very bad. Find a better way to  get access to store
@@ -26,7 +28,7 @@ class BeerInfoDetails_new extends Component {
     // console.log("id: ", this.props.match.params["id"]);
     // console.log(this);
     // store.dispatch(setSelectedBeer("zippy"));
-    // console.log("store ", store.getState().selectedBeer);
+    // console.log("store ", store.getState());
 
     // If the beer id in the uri is different than the selected beer in the
     // store update selected beer to match the uri
@@ -60,24 +62,32 @@ class BeerInfoDetails_new extends Component {
   render () {
     return (
       <div className="beer-info-details">
-        <div>
-          <div className="col-xs-12 col-sm-6">
-            <ShowSelectedBeerName />
+        {(store.getState().selectedBeer === null) ?
+          <NoBeerError /> :
 
-            <div>
-              {store.getState().selectedBeer.style}
+          <div>
+            <div className="row">
+              <div className="col-xs-12 col-sm-6">
+                <ShowSelectedBeerName />
+
+                <div>
+                  {store.getState().selectedBeer.style}
+                </div>
+
+                <ShowAbvIbu />
+
+                <ShowBreweries breweries={store.getState().selectedBeer.breweries} />
+
+              </div>
+
+              <div className="col-xs-12 col-sm-6">
+                <ShowBeerDescription />
+              </div>
             </div>
 
-            <ShowAbvIbu />
+            <GoBackBtn />
           </div>
-
-          <div className="col-xs-12 col-sm-6">
-            <ShowBeerDescription />
-          </div>
-        </div>
-
-        <GoBackBtn />
-
+        }
       </div>
     )
   }
