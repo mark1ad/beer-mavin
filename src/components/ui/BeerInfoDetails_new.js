@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import GoBackBtn from './GoBackBtn';
 import ShowSelectedBeerName from '../ShowSelectedBeerName';
+import ShowAbvIbu from '../ShowAbvIbu';
+import ShowBeerDescription from '../ShowBeerDescription';
 
 
 // TODO: This is very bad. Find a better way to  get access to store
@@ -61,8 +63,19 @@ class BeerInfoDetails_new extends Component {
         <div>
           <div className="col-xs-12 col-sm-6">
             <ShowSelectedBeerName />
+
+            <div>
+              {store.getState().selectedBeer.style}
+            </div>
+
+            <ShowAbvIbu />
+          </div>
+
+          <div className="col-xs-12 col-sm-6">
+            <ShowBeerDescription />
           </div>
         </div>
+
         <GoBackBtn />
 
       </div>
