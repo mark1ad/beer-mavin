@@ -7,7 +7,7 @@ const BreweryInfo = ({brewery, showBreweryDetails, history}) => {
   const selectBrewery = (e, brewery) => {
     e.preventDefault();
     showBreweryDetails(brewery);
-    history.push('/brewery');
+    history.push('/brewery/' + brewery.id);
   }
 
   return (

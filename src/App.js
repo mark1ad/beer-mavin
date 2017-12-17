@@ -25,7 +25,7 @@ class App extends Component {
           <Route path="/search" component={SearchResults} />
           <Route path="/beer" component={ShowBeerDetails} />
           <Route path="/beer_new/:id" component={BeerInfoDetails_new} />
-          <Route path="/brewery" component={ShowBreweryDetails} />
+          <Route path="/brewery/:id" component={ShowBreweryDetails} />
           <Route path="/about" component={About} />
           <Footer />
         </div>
