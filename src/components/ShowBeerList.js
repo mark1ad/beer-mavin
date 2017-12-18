@@ -1,6 +1,6 @@
-// SearchResults
+// ShowBeerList
 //
-// Displays the list of beers from a SearchResults
+// Displays the list of beers
 
 import { connect } from 'react-redux';
 
@@ -11,9 +11,9 @@ const mapStateToProps = (state) => {
   return { beers: beers }
 }
 
-const SearchResults = connect(
+const ShowBeerList = connect(
   mapStateToProps,
   null
 ) (BeerList)
 
-export default SearchResults;
+export default ShowBeerList;

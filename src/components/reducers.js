@@ -54,3 +54,12 @@ export const selectedBrewery = (state=null, action) => {
       return state;
   }
 }
+
+export const searchTerms = (state={beer_name: ""}, action) => {
+  switch (action.type) {
+    case C.SET_BEER_SEARCH_TERM:
+      return { beer_name: action.name };
+    default:
+      return state;
+  }
+}

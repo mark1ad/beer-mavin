@@ -1,10 +1,17 @@
 import { connect } from 'react-redux';
 
 import SearchForm from './ui/SearchForm';
-import { setBeers } from './actions';
+import {
+  setBeers,
+  clearBeers,
+  setBeerSearchTerm
+} from './actions';
 
 const mapDispatchToProps = dispatch => {
   let onSubmit = (beerName) => {
+    dispatch(clearBeers());
+    dispatch(setBeerSearchTerm(beerName));
+
     global.axiosInstance.get("beers/search?name=" + beerName)
       .then(res => {
         const beers = res.data.data;

@@ -35,3 +35,9 @@ export const setSelectedBrewery = (brewery) =>
   type: C.SET_SELECTED_BREWERY,
   brewery: brewery
 });
+
+// Search terms actions ****************************************
+export const setBeerSearchTerm = (name) => ({
+  type: C.SET_BEER_SEARCH_TERM,
+  name: name
+})
