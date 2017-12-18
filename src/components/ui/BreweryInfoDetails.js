@@ -2,19 +2,20 @@ import React from 'react';
 
 import NoBeerError from './NoBeerError';
 import GoBackBtn from './GoBackBtn';
+import ShowSelectedBreweryName from '../ShowSelectedBreweryName';
+import ShowBreweryDescription from '../ShowBreweryDescription';
 
 const BreweryInfoDetails = (props) => {
   return (
     <div className="brewery-info-details">
-      {(props.name === undefined) ?
+      {(props.brewery === null) ?
         <NoBeerError /> :
 
         <div>
-          <h2 className="text-center">{props.name}</h2>
-          <a href={props.website}>{props.website}</a>
-          <div className="brewery-description">
-            {props.description}
-          </div>
+          <ShowSelectedBreweryName />
+          <a href={props.brewery.website}>{props.brewery.website}</a>
+
+          <ShowBreweryDescription />
 
           <GoBackBtn />
         </div>
