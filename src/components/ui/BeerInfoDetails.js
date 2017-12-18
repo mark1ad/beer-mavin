@@ -2,45 +2,34 @@ import React from 'react';
 
 import NoBeerError from './NoBeerError';
 import GoBackBtn from './GoBackBtn';
+import ShowSelectedBeerName from '../ShowSelectedBeerName';
+import ShowAbvIbu from '../ShowAbvIbu';
+import ShowBeerDescription from '../ShowBeerDescription';
+import ShowBreweries from '../ShowBreweries';
 
 const BeerInfoDetails = (props) => {
 
-  const selectBrewery = (e, brewery) => {
-    e.preventDefault();
-    props.showBreweryDetails(brewery);
-    props.history.push('/brewery');
-  }
-
   return (
     <div className="beer-info-details">
-      {(props.name === undefined) ?
+      {(props.beer === null) ?
         <NoBeerError /> :
 
         <div>
           <div className="row">
             <div className="col-xs-12 col-sm-6">
-              <h2 className="text-center">{props.name}</h2>
+              <ShowSelectedBeerName />
+
               <div>
                 {props.style}
               </div>
-              <div>
-                {props.abv ? "ABV: " + props.abv : ""}
-                {props.ibu ? " IBU: " + props.ibu : ""}
-              </div>
 
-              <div>
-                  {props.breweries.map(brewery =>
-                    <div onClick={(e) => selectBrewery(e, brewery)}
-                        key={brewery.id}>
-                      {brewery.name}
-                    </div>
-                  )}
-              </div>
+              <ShowAbvIbu />
 
+              <ShowBreweries breweries={props.beer.breweries} />
             </div>
 
-            <div className="col-xs-12 col-sm-6 beer-info-description">
-              {props.description}
+            <div className="col-xs-12 col-sm-6">
+              <ShowBeerDescription />
             </div>
           </div>
 

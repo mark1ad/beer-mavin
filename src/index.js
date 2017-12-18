@@ -16,7 +16,8 @@ const axiosInstance = axios.create({
 
 global.axiosInstance = axiosInstance;
 
-const store = storeFactory();
+export const store = storeFactory();
+global.store = store;
 // TODO: move loading store to more appriopriate place
 ReactDOM.render(
   <Provider store={store}>

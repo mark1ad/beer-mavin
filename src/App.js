@@ -21,8 +21,8 @@ class App extends Component {
           <FindBeer />
           <Route exact path="/" component={Home} />
           <Route path="/search" component={SearchResults} />
-          <Route path="/beer" component={ShowBeerDetails} />
-          <Route path="/brewery" component={ShowBreweryDetails} />
+          <Route path="/beer/:id" component={ShowBeerDetails} />
+          <Route path="/brewery/:id" component={ShowBreweryDetails} />
           <Route path="/about" component={About} />
           <Footer />
         </div>
