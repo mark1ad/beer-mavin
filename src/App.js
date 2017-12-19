@@ -4,7 +4,7 @@ import { HashRouter, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/ui/Footer';
-import SearchResults from './components/SearchResults';
+import ShowBeerList from './components/ShowBeerList';
 import FindBeer from './components/FindBeer';
 import Home from './components/ui/Home';
 import About from './components/ui/About';
@@ -20,7 +20,7 @@ class App extends Component {
           <Header />
           <FindBeer />
           <Route exact path="/" component={Home} />
-          <Route path="/search" component={SearchResults} />
+          <Route path="/beers/:name" component={ShowBeerList} />
           <Route path="/beer/:id" component={ShowBeerDetails} />
           <Route path="/brewery/:id" component={ShowBreweryDetails} />
           <Route path="/about" component={About} />

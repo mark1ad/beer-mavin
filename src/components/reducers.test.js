@@ -1,7 +1,17 @@
 import deepFreeze from 'deep-freeze';
-import { beer, beers, selectedBeer, selectedBrewery } from "./reducers";
-import { addBeer, clearBeers, setSelectedBeer, setSelectedBrewery }
-  from "./actions";
+import {
+  beer,
+  beers,
+  selectedBeer,
+  selectedBrewery,
+  searchTerms
+} from "./reducers";
+import { addBeer,
+  clearBeers,
+  setSelectedBeer,
+  setSelectedBrewery,
+  setBeerSearchTerm
+} from "./actions";
 import beerData from '../test_data/test_data.json';
 
 const beerList = [
@@ -106,4 +116,15 @@ it("set selected brewery", () => {
   deepFreeze(action);
   const results = selectedBrewery( state, action);
   expect(results).toEqual("test_brewery_id");
+})
+
+//********************************
+// Search terms
+it("set beer search term",() => {
+  const state = {};
+  const action = setBeerSearchTerm("beer name");
+  deepFreeze(state);
+  deepFreeze(action);
+  const results = searchTerms( state, action);
+  expect(results).toEqual({ beer_name: "beer name"});
 })
