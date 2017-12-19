@@ -1,0 +1,9 @@
+.description {
+  margin: 30px;
+}
+
+@media screen and ( max-device-width: $screen-sm-min ) {
+  .description {
+    margin: 15px 0;
+  }
+}
