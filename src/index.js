@@ -10,13 +10,21 @@ import registerServiceWorker from './registerServiceWorker';
 import storeFactory from './components/storeFactory';
 
 // TODO: set url
+let baseURL;
+console.log(window.location);
+if (window.location.host === 'localhost:3001') {
+  baseURL = 'http://localhost:3000';
+} else {
+  baseURL = 'https://beer-mavin-api.herokuapp.com';
+}
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000"
+  baseURL: baseURL
 })
 
 global.axiosInstance = axiosInstance;
 
-const store = storeFactory();
+export const store = storeFactory();
+global.store = store;
 // TODO: move loading store to more appriopriate place
 ReactDOM.render(
   <Provider store={store}>

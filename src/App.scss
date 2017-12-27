@@ -1,3 +1,15 @@
+$default-background-color: #333;
+$default-padding: 15px;
+$screen-sm-min: 480px;
+
 @import "components/header";
+@import "components/ui/footer";
 @import "components/ui/searchForm";
+@import "components/ui/home";
 @import "components/ui/beerInfo";
+@import "components/ui/beerInfoDetails";
+@import "components/ui/BreweryInfoDetails";
+@import "components/ui/beerList";
+@import "components/ui/about";
+@import "components/ui/noBeerError";
+@import "components/ui/description";

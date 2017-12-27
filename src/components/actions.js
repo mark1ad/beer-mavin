@@ -21,3 +21,23 @@ export const setBeers = (beers) =>
   type: C.SET_BEER_LIST,
   beers: beers
 })
+
+// Set beer to display on beer details page
+export const setSelectedBeer = (beer_id) =>
+({
+  type: C.SET_SELECTED_BEER,
+  beer_id: beer_id
+})
+
+// Set brewery to display on brewery details page
+export const setSelectedBrewery = (brewery) =>
+({
+  type: C.SET_SELECTED_BREWERY,
+  brewery: brewery
+});
+
+// Search terms actions ****************************************
+export const setBeerSearchTerm = (name) => ({
+  type: C.SET_BEER_SEARCH_TERM,
+  name: name
+})
