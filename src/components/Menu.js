@@ -5,7 +5,7 @@ const Menu = () => {
   return (
     <div>
       <nav className="navbar">
-        <a href="www.example.com" className="navbar-brand">Beer Rater</a>
+        <a href="www.example.com" className="navbar-brand">The Beer Mavin</a>
 
         <button
             type="button"
