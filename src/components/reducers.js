@@ -63,3 +63,16 @@ export const searchTerms = (state={beer_name: ""}, action) => {
       return state;
   }
 }
+
+export const user = (state=null, action) => {
+  switch (action.type) {
+    case C.SET_USER_INFO:
+      return {
+        id: action.id,
+        name: action.name,
+        token: action.token
+      };
+    default:
+      return state;
+  }
+}

@@ -41,3 +41,11 @@ export const setBeerSearchTerm = (name) => ({
   type: C.SET_BEER_SEARCH_TERM,
   name: name
 })
+
+// User actions ************************************************
+export const setUserInfo = (id, name, token) => ({
+  type: C.SET_USER_INFO,
+  id: id,
+  name: name,
+  token: token
+})

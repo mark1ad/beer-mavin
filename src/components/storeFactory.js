@@ -7,7 +7,8 @@ import {
   beers,
   selectedBeer,
   selectedBrewery,
-  searchTerms
+  searchTerms,
+  user
 } from './reducers';
 
 let initStore = {
@@ -26,7 +27,7 @@ const logger = store => next => action => {
 }
 
 const storeFactory = (initialState = initStore) =>
-  applyMiddleware(logger)(createStore)(combineReducers({beers, selectedBeer, selectedBrewery, searchTerms}), initialState)
+  applyMiddleware(logger)(createStore)(combineReducers({beers, selectedBeer, selectedBrewery, searchTerms, user}), initialState)
 // const storeFactory = (initialState = initStore) =>
 //   (createStore)(beers, initialState)
 

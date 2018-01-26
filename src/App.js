@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 
 import './App.css';
-import NavBar from './components/NavBar';
+import ShowNavBar from  './components/ShowNavBar';
 import Header from './components/Header';
 import Footer from './components/ui/Footer';
 import ShowBeerList from './components/ShowBeerList';
@@ -18,8 +18,8 @@ class App extends Component {
     return (
       <HashRouter>
         <div className="App">
-          <NavBar />
           <Header />
+          <ShowNavBar />
           <FindBeer />
           <Route exact path="/" component={Home} />
           <Route path="/beers/:name" component={ShowBeerList} />
