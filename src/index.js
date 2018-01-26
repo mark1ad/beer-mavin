@@ -11,7 +11,7 @@ import storeFactory from './components/storeFactory';
 
 // TODO: set url
 let baseURL;
-console.log(window.location);
+// console.log(window.location);
 if (window.location.host === 'localhost:3001') {
   baseURL = 'http://localhost:3000';
 } else {
